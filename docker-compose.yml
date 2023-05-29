@@ -1,0 +1,18 @@
+services:
+  db:
+    image: mongo:4.2.24
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=AdminSammy
+      - MONGO_INITDB_ROOT_PASSWORD=password1!
+    ports:
+      - 27017:27017
+
+  server:
+    build: .
+    ports:
+      - 3001:3001
+  
+  client:
+    build: ./client
+    ports:
+      - 3000:3000
