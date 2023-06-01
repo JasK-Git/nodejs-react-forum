@@ -1,4 +1,4 @@
-name: Release
+name: Semantic Release
 
 on:
   push:
@@ -19,11 +19,11 @@ jobs:
           node-version: 'lts/*'
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
-      - name: SemanticRelease 
-	run: npx semantic-release
-	env:
+      - name: Semantic Release
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
           
        
